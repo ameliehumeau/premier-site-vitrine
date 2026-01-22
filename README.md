@@ -7,7 +7,7 @@ Présenter clairement l’activité, les services et permettre une prise de cont
 Le site est volontairement léger, rapide à charger et accessible.
 
 ## 🖥️ Aperçu
-![Aperçu du site](./images/screenshots/business_site.png)
+![Aperçu du site](images/screenshots/business_site.png)
 
 ## 🛠️ Technologies utilisées
 - HTML
