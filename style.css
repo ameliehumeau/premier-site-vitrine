@@ -1,0 +1,1255 @@
+/* =====================
+   BASE
+===================== */
+
+:root {
+    --bg-main: #FAF8F2;
+    --bg-dark: #3B2F25;
+
+    --text-main: #2E2A25;
+    --text-light: #FFFFFF;
+
+    --accent: #8C6A2B;
+    --accent-soft: #CBB27C;
+
+    --border-soft: rgba(0, 0, 0, 0.08);
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background-color: var(--bg-main);
+    color:var(--text-main)
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+button {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+
+
+/* =====================
+   NAVIGATION
+===================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    background-color: rgba(250, 248, 242, 0.95);
+    border-bottom: 1px solid var(--accent-soft);
+    z-index: 1000;
+}
+
+nav h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--bg-dark)
+}
+
+nav .onglets a {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--text-main);
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+nav .onglets {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+nav .onglets a:hover {
+    border-bottom: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+/* =====================
+   HEADER
+===================== */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-image: url("images/restaurant.jpg");
+    background-size:cover;
+    padding: 10em; 
+    padding-top: 12em;
+    border-bottom: 5px solid #6b6109 ;
+    color: var(--text-light);
+}
+
+header .texte{
+    color : #ebe0d6;
+    background: rgba(52, 10, 1, 0.4);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 50%;
+    background-blend-mode: normal ;
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+header a{
+    text-decoration: none;
+    border-radius: 8px ;
+    color : #d8cec4;
+    border : none;
+    padding : 10px;
+    transition: background-color 1s ease 0s;
+    background: linear-gradient(
+    50deg,
+    rgba(91, 64, 2, 0.673) 12%,
+    rgba(169, 128, 5, 0.1) 77%
+    );
+    background-blend-mode: normal ;
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+header a:hover {
+    cursor : pointer;
+    background-color: rgb(110, 64, 3);
+}
+
+button,
+header a {
+    background-color: var(--accent);
+    color: var(--text-light);
+    border: none;
+}
+
+button:hover {
+    background-color: var(--bg-dark);
+}
+
+
+/* =====================
+   A PROPOS
+===================== */
+
+section{
+    padding:5rem 2rem;
+}
+
+.contenu-apropos {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+}
+
+/* =====================
+   CARTE FLIP
+===================== */
+
+
+.carte {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.carte-inner {
+    width: 700px;
+    height: 420px;
+    position: relative;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+}
+
+.carte:hover .carte-inner {
+    transform: rotateY(180deg);
+}
+
+.carte-front,
+.carte-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carte-front img,
+.carte-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carte-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================
+   BULLE TEXTE
+===================== */
+
+.bulle {
+    position: absolute;
+    padding: 15px 18px;
+    border-radius: 14px;
+    max-width: 85%;
+    background: linear-gradient(
+    50deg,
+    rgba(91, 64, 2, 0.673) 12%,
+    rgba(169, 128, 5, 0.1) 77%
+    );
+    background-blend-mode: normal ;
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.bulle p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #fff;
+}
+
+/* =====================
+   CAROUSEL
+===================== */
+
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.carousel {
+    position: relative;
+    width: 900px;
+    margin: 60px auto;
+    overflow: visible;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+}
+
+
+.carousel-track::-webkit-scrollbar{
+    display:none;
+}
+
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* gauche du carousel */
+.carousel-btn.left {
+    left: 0;
+}
+
+/* droite du carousel */
+.carousel-btn.right {
+    right: 0;
+}
+
+/* =====================
+   BACK TO TOP
+===================== */
+
+#backToTop {
+    z-index:9;
+    position : fixed;
+    right: 30px;      
+    bottom: 30px;     
+    text-decoration: none; 
+    background-color: var(--bg-dark); 
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+#backToTop:hover {
+    transform: scale(1.2) rotate(-15deg);
+    background-color: rgba(91, 64, 2, 0.9)
+}
+
+
+
+/* =====================
+   MENU
+===================== */
+
+
+#menu{
+    padding:5rem 2rem;
+    text-align: center;
+}
+
+#menu h2{
+    margin-bottom: 3rem;
+}
+
+.menu-container{
+    display :grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap:2.5rem;
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.menu-category{
+    background: rgba(255,255,255,0.75);
+    padding : 2rem 2rem 2.2rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-align: left;
+}
+
+.menu-category h3{
+    font-family: 'Playfair Display', serif;
+    font-size:1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.menu-category ul{
+    list-style: none;
+    padding :0;
+    margin : 0;
+}
+
+.menu-category li{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.menu-category li:last-child{
+    border-bottom: none
+}
+
+.dish-name{
+    font-weight: 500;
+}
+
+.dish-price{
+    font-weight: 600;
+    color : var(--accent);
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+/* =====================
+   RÉSERVER UNE TABLE & CONTACT
+===================== */
+
+/* POPUP FLOTTANT BOTTOM RIGHT */
+.popup-floating {
+    font-family: 'Source Sans 3', sans-serif;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 280px; /* plus petit */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    z-index: 3000;
+
+    /* animation */
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+.popup-floating.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* header */
+.popup-header {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    background: var(--accent);
+}
+
+.popup-header h3 {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.popup-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* body */
+.popup-body {
+    padding: 1rem;
+}
+
+.popup-info {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+/* sections */
+.popup-section {
+    margin-bottom: 1rem;
+}
+
+/* confirmation */
+.popup-confirmation {
+    display: none;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.popup-confirmation h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.popup-confirmation p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.popup-confirmation .small {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+/* quand confirmé */
+.popup-floating.confirmed .popup-body {
+    display: none;
+}
+
+.popup-floating.confirmed .popup-confirmation {
+    display: block;
+}
+
+.popup-floating .email{
+    padding : 10px;
+    
+    justify-content: space-between;
+}
+
+.popup-floating .email input{
+    border-radius: 8px;
+    border: none;
+    padding: 0.3rem;
+    background-color: #f1f1f1;
+    width:max-content;
+}
+
+.email input:focus{
+    outline : none;
+    box-shadow : 0 12px 30px rgba(0,0,0,0.3);
+    background-color: #FFF;
+}
+
+.email label{
+    font-size: small;
+}
+
+.section-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* grid couverts */
+.guest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+}
+
+.guest-grid button {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-soft);
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.guest-grid button.active,
+.guest-grid button:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* inputs */
+.popup-section input,
+.popup-section select {
+    width: 100%;
+    padding: 0.45rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.85rem;
+}
+
+/* réserver */
+.reserve-btn {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    color: #6b6109;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popup-footer {
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-top: 0.6rem;
+}
+
+/* =====================
+   FORMULAIRE CONTACT
+===================== */
+
+#contact {
+    padding: 5rem 2rem;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--bg-dark);
+}
+
+#contact form {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 2.2rem 2.4rem;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* labels */
+#contact form label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--bg-dark);
+}
+
+/* champs */
+#contact form input,
+#contact form textarea {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background-color: rgba(255,255,255,0.9);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* focus propre */
+#contact form input:focus,
+#contact form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(140, 106, 43, 0.15);
+}
+
+/* textarea */
+#contact form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* bouton */
+#contact form button {
+    margin-top: 0.6rem;
+    align-self: flex-end;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#contact form button:hover {
+    background-color: var(--bg-dark);
+    transform: translateY(-2px);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+
+
+
+/* =====================
+   MOBILE AJUSTEMENTS
+===================== */
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-info p {
+        margin: 0.2rem 0;
+    }
+}
+
+
+
+
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+    background-color: #4a4305af;
+    color: #f5f5dc;
+    padding: clamp(2rem, 5vw, 4rem) 1.5rem 1.5rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #f5f5dc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d8cec4;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(245,245,220,0.3);
+    padding-top: 1rem;
+}
+
+#infos {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+#infos h2 {
+    margin-bottom: 3rem;
+}
+
+/* conteneur */
+.infos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* carte */
+.infos-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-align: left;
+}
+
+/* titre carte */
+.infos-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--bg-dark);
+}
+
+/* listes */
+.infos-card ul {
+    color :var(--text-main);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infos-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+}
+
+.infos-card li:last-child {
+    border-bottom: none;
+}
+
+/* horaires */
+.hours span:last-child {
+    font-weight: 500;
+}
+
+/* infos pratiques */
+.practical li {
+    justify-content: flex-start;
+    gap: 0.6rem;
+}
+
+
+
+
+/* =====================
+   FONTS
+===================== */
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+
+/* =====================
+   RESPONSIVE - MOBILE FIRST
+===================== */
+
+/* NAVIGATION RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.6rem 1rem;
+        justify-content: space-between;
+    }
+
+    nav h1 {
+        font-size: 1.3rem;
+    }
+
+    nav .onglets {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(250, 248, 242, 0.98);
+        padding: 1.5rem;
+        gap: 1.2rem;
+        transform: translateY(-120%);
+        transition: transform 0.4s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    nav .onglets.open {
+        transform: translateY(0);
+    }
+
+    nav .onglets a {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        text-align: center;
+        border-bottom: 2px solid transparent;
+    }
+
+}
+
+/* HEADER RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        padding: 8rem 1.5rem 4rem;
+        background-position: center;
+    }
+
+    header .texte {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h4 {
+        font-size: 1rem;
+    }
+
+    header a {
+        display: inline-block;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 6rem 1rem 3rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* CAROUSEL RESPONSIVE */
+@media (max-width: 900px) {
+    .carousel {
+        width: 100%;
+        max-width: 600px;
+        margin: 40px auto;
+    }
+
+    .carousel-wrapper {
+        max-width: 600px;
+    }
+
+    .carte-inner {
+        width: 100%;
+        max-width: 500px;
+        height: 350px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .carousel-btn.left {
+        left: -10px;
+    }
+
+    .carousel-btn.right {
+        right: -10px;
+    }
+
+    .bulle {
+        max-width: 90%;
+        padding: 12px 15px;
+    }
+
+    .bulle p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel {
+        max-width: 90%;
+        overflow: hidden;
+    }
+
+    .carte-inner {
+        height: 280px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .bulle p {
+        font-size: 0.8rem;
+    }
+}
+
+/* MENU RESPONSIVE */
+@media (max-width: 768px) {
+    #menu {
+        padding: 3rem 1rem;
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .menu-category {
+        padding: 1.5rem;
+    }
+
+    .menu-category h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu-category li {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+    }
+
+    .dish-name {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+/* POPUP RÉSERVATION RESPONSIVE */
+@media (max-width: 768px) {
+    .popup-floating {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 14px 14px 0 0;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .popup-floating.active {
+        transform: translateY(0);
+    }
+
+    .popup-body {
+        padding: 1.2rem;
+    }
+
+    .guest-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .guest-grid button {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .guest-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .email input {
+        width: 100%;
+    }
+}
+
+/* CONTACT RESPONSIVE */
+@media (max-width: 768px) {
+    #contact {
+        padding: 3rem 1rem;
+    }
+
+    #contact form {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    #contact form input,
+    #contact form textarea {
+        font-size: 1rem;
+    }
+}
+
+/* INFOS RESPONSIVE */
+@media (max-width: 768px) {
+    #infos {
+        padding: 3rem 1rem;
+    }
+
+    .infos-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .infos-card {
+        padding: 1.5rem;
+    }
+
+    .infos-card li {
+        font-size: 0.85rem;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .hours li {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* BACK TO TOP RESPONSIVE */
+@media (max-width: 768px) {
+    #backToTop {
+        right: 15px;
+        bottom: 80px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* SECTIONS GÉNÉRALES RESPONSIVE */
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 2rem 0.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* =====================
+   BURGER MENU
+===================== */
+
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--bg-dark);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.burger-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .burger-btn {
+        display: block;
+    }
+}
+
+/* Style du back to top initialement caché */
+#backToTop {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Amélioration carousel touch */
+.carousel-track {
+    touch-action: pan-y;
+    user-select: none;
+}
+
+/* Amélioration des cartes flip sur mobile */
+@media (max-width: 768px) {
+    
+    
+    .carte.active .carte-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Overlay pour popup mobile */
+@media (max-width: 768px) {
+    .popup-floating::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .popup-floating.active::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

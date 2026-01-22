@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>L'atelier 27</title>
+</head>
+<body>
+    
+    <nav>
+        <h1>L'atelier 27</h1>
+        <div class="onglets">
+            <a href="#top">Home</a>
+            <a href="#menu">Notre Carte</a>
+            <a href="#" id="open-reservation">Réserver une table</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header id="top">
+        <div class="texte">
+            <h1>L'atelier 27</h1>
+            <h4>Une cuisine de saison, pensée chaque jour.</h4>
+            <a href="#apropos">À propos</a>
+        </div>
+    </header>
+
+    <section id="apropos">
+        <h2>À propos de L’atelier 27</h2>
+
+        <div class="carousel">
+            <div class="carousel-wrapper">
+                <button class="carousel-btn left">‹</button>
+
+                <div class="carousel-track">
+
+                    <div class="carte">
+                        <div class="carte-inner">
+                            <div class="carte-front">
+                                <img src="images/cuisine.jpg" alt="">
+                            </div>
+                            <div class="carte-back">
+                                <img src="images/savoir-faire.jpg" alt="">
+                                <div class="bulle">
+                                    <p>
+                                        L’atelier 27 est né d’une idée simple : proposer une cuisine sincère, ancrée dans les saisons
+                                        et guidée par le produit. Chaque plat est pensé pour révéler les saveurs naturelles des ingrédients,
+                                        tout en respectant le rythme de la nature et les traditions culinaires locales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carte">
+                        <div class="carte-inner">
+                            <div class="carte-front">
+                                <img src="images/producteurs.jpg" alt="">
+                            </div>
+                            <div class="carte-back">
+                                <img src="images/producteurs2.jpg" alt="">
+                                <div class="bulle">
+                                    <p>
+                                        Nous travaillons main dans la main avec des producteurs locaux, soigneusement sélectionnés pour
+                                        la qualité de leur savoir-faire et la fraîcheur de leurs produits. Notre cuisine met le goût
+                                        avant le décor, mais sans jamais oublier l’harmonie et l’esthétique qui font d’un repas
+                                        un moment inoubliable.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carte">
+                        <div class="carte-inner">
+                            <div class="carte-front">
+                                <img src="images/convivial.jpg" alt="">
+                            </div>
+                            <div class="carte-back">
+                                <img src="images/convivial2.jpg" alt="">
+                                <div class="bulle">
+                                    <p>
+                                        L’atelier 27, c’est un lieu convivial et chaleureux, pensé pour que chacun puisse prendre
+                                        le temps de savourer. Que ce soit pour un déjeuner rapide, un dîner qui s’étire, ou un moment
+                                        spécial entre amis ou en famille, nous voulons que chaque visite soit une expérience unique,
+                                        où le plaisir du goût se mêle à la convivialité du partage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn right">›</button>
+            </div>
+        </div>
+    </section>
+
+    
+
+  
+
+
+    <a href="#top" id="backToTop">↑</a>
+
+    <!-- =====================
+        MENU
+    ===================== -->
+    <section id="menu">
+        <h2>Notre Carte</h2>
+        <div class="menu-container">
+            <div class="menu-category">
+                <h3>Entrées</h3>
+                <ul>
+                    <li>
+                        <span class="dish-name">Velouté de potimarron</span>
+                        <span class="dish-price">8€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Salade de saison</span>
+                        <span class="dish-price">9€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Tartare de saumon</span>
+                        <span class="dish-price">12€</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-category">
+                <h3>Plats</h3>
+                <ul>
+                    <li>
+                        <span class="dish-name">Filet de dorade, légumes de saison</span>
+                        <span class="dish-price">18€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Risotto aux champignons</span>
+                        <span class="dish-price">16€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Entrecôte de boeuf, frites maison</span>
+                        <span class="dish-price">22€</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <ul>
+                    <li>
+                        <span class="dish-name">Crème brulée</span>
+                        <span class="dish-price">7€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Tarte au chocolat</span>
+                        <span class="dish-price">7€</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Salade de fruits frais</span>
+                        <span class="dish-price">6€</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================
+        RÉSERVER UNE TABLE
+    ===================== -->
+    
+    <!-- POPUP FORMULAIRE RÉSERVATION -->
+    <div id="reservation-popup" class="popup-floating">
+
+        <div class="popup-header">
+            <h3>L’atelier 27</h3>
+            <button id="close-popup">✕</button>
+        </div>
+
+        <div class="popup-body">
+
+            <p class="popup-info">
+                Merci de vérifier vos spams pour l’email de confirmation.
+            </p>
+
+            <div class="email">
+                <label for="contact-email">Email :</label>
+                <input type="email" id="contact-email" name="email" required>
+
+            </div>
+
+            <!-- Couverts -->
+            <div class="popup-section">
+                <div class="section-title">🍴 Nombre de couverts</div>
+                <div class="guest-grid">
+                    <button>1</button>
+                    <button class="active">2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div class="popup-section">
+                <div class="section-title">📅 Date</div>
+                <input type="date">
+            </div>
+
+            <!-- Horaire -->
+            <div class="popup-section">
+                <div class="section-title">⏰ Horaire</div>
+                <select>
+                    <option>12:00</option>
+                    <option>12:30</option>
+                    <option>13:00</option>
+                    <option>19:00</option>
+                    <option>19:30</option>
+                    <option>20:00</option>
+                </select>
+            </div>
+
+            <button class="reserve-btn">Réserver</button>
+
+            <p class="popup-footer">
+                Réservation en ligne
+            </p>
+
+        </div>
+        <div class="popup-confirmation">
+            <h4>Réservation envoyée 🍽️</h4>
+            <p>
+                Merci ! Nous avons bien pris en compte votre demande pour
+                <span id="confirm-guests"></span> personnes.
+            </p>
+            <p class="small">
+                Un email de confirmation vous sera envoyé.
+            </p>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- =====================
+        CONTACT
+    ===================== -->
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <form class="contact-form">
+            <label for="contact-name">Nom :</label>
+            <input type="text" id="contact-name" name="name" required>
+
+            <label for="contact-email">Email :</label>
+            <input type="email" id="contact-email" name="email" required>
+
+            <label for="contact-subject">Objet :</label>
+            <input type="text" id="contact-subject" name="subject" required>
+
+            <label for="contact-message">Message :</label>
+            <textarea id="contact-message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>L'atelier 27</h3>
+            </div>
+            <section id="infos">
+
+        <div class="infos-container">
+
+            <!-- Horaires -->
+            <div class="infos-card">
+                <h3>Horaires</h3>
+                <ul class="hours">
+                    <li><span>Lundi</span><span>Fermé</span></li>
+                    <li><span>Mardi</span><span>12h – 14h / 19h – 22h</span></li>
+                    <li><span>Mercredi</span><span>12h – 14h / 19h – 22h</span></li>
+                    <li><span>Jeudi</span><span>12h – 14h / 19h – 22h</span></li>
+                    <li><span>Vendredi</span><span>12h – 14h / 19h – 23h</span></li>
+                    <li><span>Samedi</span><span>19h – 23h</span></li>
+                    <li><span>Dimanche</span><span>Fermé</span></li>
+                </ul>
+            </div>
+
+            <!-- Infos pratiques -->
+            <div class="infos-card">
+                <h3>Infos pratiques</h3>
+                <ul class="practical">
+                    <li>📍 123 Rue du Foin, 75000 Paris</li>
+                    <li>📞 01 23 45 67 89</li>
+                    <li>🍽️ Cuisine de saison</li>
+                    <li>♿ Accessible PMR</li>
+                    <li>💳 Carte bancaire acceptée</li>
+                    <li>🚭 Établissement non-fumeur</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+            <div class="footer-links">
+                <a href="#apropos">À propos</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 L'atelier 27 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+
+
+
+
+</body>
+</html>
